@@ -1,113 +1,191 @@
-import Image from 'next/image'
+import Image from "next/image";
+
+// Images
+import profileImage from "./assets/profile.png";
+
+// Logo Images
+import logoImage from "./assets/logos/lf-logo.png";
+import nextLogoImage from "./assets/logos/next-logo.png";
+import tailwindLogoImage from "./assets/logos/tailwind-logo.png";
+import reactLogoImage from "./assets/logos/react-logo.png";
+import djangoLogoImage from "./assets/logos/django-logo.png";
+
+// Projects Images
+import productiveImage from "./assets/projects/productive.png";
+import gitfavImage from "./assets/projects/gitfav.png";
+import pokedexImage from "./assets/projects/pokedex.png";
+import notesImage from "./assets/projects/notes.png";
+import focusTimerImage from "./assets/projects/focustimer.png";
+
+// Components
+import Navlinks from "./components/Navlinks";
+import TechCard from "./components/TechCard";
+import ProjectsButton from "./components/ProjectsButton";
+import ProjectCard from "./components/ProjectCard";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="flex flex-col items-center bg-light text-white">
+      {/* Header */}
+      <header className="flex gap-80 justify-center fixed z-50 top-0 w-full bg-dark h-28 items-center ">
+        <div>
+          <Image
+            src={logoImage}
+            width={150}
+            height={150}
+            alt="Luis Felipe Avila's Logo"
+            className="ml-28"
+          />
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
+        <nav className="flex gap-12  justify-center items-center ">
+          <Navlinks>Presentation</Navlinks>
+          <Navlinks>Technologies</Navlinks>
+          <Navlinks>Projects</Navlinks>
+          <Navlinks>Profissional Experience</Navlinks>
+          <Navlinks>Contact</Navlinks>
+          <Navlinks>Certificates</Navlinks>
+        </nav>
+      </header>
+
+      {/* Presentation */}
+      <section
+        id="presentation"
+        className="flex flex-col items-center justify-center min-h-screen"
+      >
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src={profileImage}
+          width={250}
+          height={250}
+          alt="Luis's Profile Picture"
+          className="rounded-full border-solid border-4 border-pink  "
         />
-      </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <div className="flex flex-col items-center mt-10">
+          <h1 className="text-3xl mb-7">Hi, I&apos;m Luís Felipe Ávila 👽 </h1>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+          <h2 className="text-2xl text-pink">
+            &#60;Full Stack Developer/&#62;
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+        <p className="text-xl mt-7 leading-relaxed w-3/5 text-center">
+          As a Fullstack Developer, I am excited to learn new skills and
+          techniques to build effective and efficient applications. My passion
+          for technology drives me to stay up-to-date with the latest industry
+          trends and seek opportunities to apply my skills to innovative
+          projects. I am eager to work in a team and learn from experienced
+          colleagues, while continuing to hone my Fullstack development skills
+          to become a highly skilled professional.
+        </p>
+      </section>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <hr className=" border-pink w-4/5" />
+
+      {/* Technologies */}
+      <section
+        id="technologies"
+        className="flex flex-col items-center justify-center min-h-screen"
+      >
+        <h1 className="text-3xl text-yellow">&#60;Technologies/&#62;</h1>
+        <div className="grid grid-cols-2">
+          <TechCard title="<Next.js/>" logoImage={nextLogoImage}>
+            Next.js is a React framework that gives you building blocks to
+            create web applications.
+          </TechCard>
+
+          <TechCard title="<Tailwind CSS/>" logoImage={tailwindLogoImage}>
+            Tailwind CSS is a utility-first CSS framework for rapidly building
+            modern websites without ever leaving your HTML.
+          </TechCard>
+
+          <TechCard title="<React/>" logoImage={reactLogoImage}>
+            The React.js framework is an open-source JavaScript framework and
+            library developed by Facebook.
+          </TechCard>
+
+          <TechCard title="<Django/>" logoImage={djangoLogoImage}>
+            Django is a high-level Python web framework that encourages rapid
+            development and clean, pragmatic design.
+          </TechCard>
+        </div>
+      </section>
+
+      <hr className="mt-40 border-yellow w-4/5" />
+
+      {/* Projectss */}
+      <section
+        id="projects"
+        className="flex flex-col items-center justify-center min-h-screen"
+      >
+        <h1 className="mt-40  text-3xl text-green">&#60;Projects/&#62;</h1>
+
+        <div className="grid grid-cols-3">
+          <ProjectCard
+            link="Gitfav"
+            title="Github Favorites"
+            thumbnailProject={gitfavImage}
+            description="Bookmark any github user."
+          >
+            <ProjectsButton>React.js</ProjectsButton>
+            <ProjectsButton>React Query</ProjectsButton>
+            <ProjectsButton>Github API</ProjectsButton>
+          </ProjectCard>
+
+          <ProjectCard
+            link="Pokedex"
+            title="Pokedex"
+            thumbnailProject={pokedexImage}
+            description="Search for pokemons."
+          >
+            <ProjectsButton>React.js</ProjectsButton>
+            <ProjectsButton>React-Router</ProjectsButton>
+            <ProjectsButton>PokeAPI</ProjectsButton>
+          </ProjectCard>
+
+          <ProjectCard
+            link="Productive"
+            title="Productive"
+            thumbnailProject={productiveImage}
+            description="Track your tasks."
+          >
+            <ProjectsButton>React.js</ProjectsButton>
+            <ProjectsButton>React-Router</ProjectsButton>
+            <ProjectsButton>Json-Server</ProjectsButton>
+          </ProjectCard>
+
+          <ProjectCard
+            link="Notes"
+            title="Notes"
+            thumbnailProject={notesImage}
+            description="Create notes and read them."
+          >
+            <ProjectsButton>React.js</ProjectsButton>
+            <ProjectsButton>Json-Server</ProjectsButton>
+          </ProjectCard>
+
+          <ProjectCard
+            link="FocusTimer"
+            title="Focus Timer"
+            thumbnailProject={focusTimerImage}
+            description="Timer clock to study while listening to sounds."
+          >
+            <ProjectsButton>HTML</ProjectsButton>
+            <ProjectsButton>CSS</ProjectsButton>
+          </ProjectCard>
+
+          <button className="flex flex-col items-center justify-center mt-20 hover:scale-110 transition-transform duration-300">
+            <a href="https://github.com/luisavila97" target="_blank">
+              <div className="bg-green py-7 px-4 rounded-full text-dark text-3xl">
+                &rarr;
+              </div>
+              <h1 className="mt-8 text-xl">See more!</h1>
+            </a>
+          </button>
+        </div>
+      </section>
+
+      <hr className="mt-40 border-green w-4/5" />
     </main>
-  )
+  );
 }
