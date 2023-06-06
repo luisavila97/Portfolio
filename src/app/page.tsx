@@ -16,12 +16,22 @@ import gitfavImage from "./assets/projects/gitfav.png";
 import pokedexImage from "./assets/projects/pokedex.png";
 import notesImage from "./assets/projects/notes.png";
 import focusTimerImage from "./assets/projects/focustimer.png";
+import portfolioImage from "./assets/projects/portfolio.png";
+
+// Experience Images
+import brasmacImage from "./assets/experiences/brasmac.png";
+
+// Contact Images
+import whatsappImage from "./assets/contacts/whatsapp.png";
+import emailImage from "./assets/contacts/email.png";
+import linkedinImage from "./assets/contacts/linkedin.png";
 
 // Components
 import Navlinks from "./components/Navlinks";
 import TechCard from "./components/TechCard";
 import ProjectsButton from "./components/ProjectsButton";
 import ProjectCard from "./components/ProjectCard";
+import ContactCard from "./components/ContactCard";
 
 export default function Home() {
   return (
@@ -44,7 +54,6 @@ export default function Home() {
           <Navlinks>Projects</Navlinks>
           <Navlinks>Profissional Experience</Navlinks>
           <Navlinks>Contact</Navlinks>
-          <Navlinks>Certificates</Navlinks>
         </nav>
       </header>
 
@@ -122,6 +131,17 @@ export default function Home() {
 
         <div className="grid grid-cols-3">
           <ProjectCard
+            link="Portfolio"
+            title="Portfolio Website"
+            thumbnailProject={portfolioImage}
+            description="Portfolio website."
+          >
+            <ProjectsButton>Next.js</ProjectsButton>
+            <ProjectsButton>React.js</ProjectsButton>
+            <ProjectsButton>Tailwind CSS</ProjectsButton>
+          </ProjectCard>
+
+          <ProjectCard
             link="Gitfav"
             title="Github Favorites"
             thumbnailProject={gitfavImage}
@@ -174,7 +194,7 @@ export default function Home() {
             <ProjectsButton>CSS</ProjectsButton>
           </ProjectCard>
 
-          <button className="flex flex-col items-center justify-center mt-20 hover:scale-110 transition-transform duration-300">
+          <button className="flex flex-col items-center justify-center mt-28 hover:scale-110 transition-transform duration-300">
             <a href="https://github.com/luisavila97" target="_blank">
               <div className="bg-green py-7 px-4 rounded-full text-dark text-3xl">
                 &rarr;
@@ -186,6 +206,69 @@ export default function Home() {
       </section>
 
       <hr className="mt-40 border-green w-4/5" />
+
+      <section
+        id="profissionalexperience"
+        className="flex flex-col items-center justify-center min-h-screen"
+      >
+        <h1 className="mt-40  text-3xl text-pink">
+          &#60;Professional Experience/&#62;
+        </h1>
+
+        <article className="rounded-lg bg-dark py-8 px-8 mt-20 flex items-center justify-center flex-col">
+          <h1 className="text-2xl text-yellow">Brasmac Engenharia</h1>
+
+          <div className="flex flex-col items-center justify-center mt-10 rounded-lg bg-light">
+            <Image
+              src={brasmacImage}
+              width={300}
+              height={300}
+              alt="Brasmac Logo"
+            />
+          </div>
+
+          <p className="text-xl my-8">
+            Responsible to develop the frontend of the website
+          </p>
+
+          <div>
+            <ProjectsButton>React.js</ProjectsButton>
+            <ProjectsButton>Tailwind CSS</ProjectsButton>
+          </div>
+        </article>
+      </section>
+
+      <hr className="mt-40 border-pink w-4/5" />
+
+      <section
+        id="contact"
+        className="flex flex-col items-center justify-center min-h-screen"
+      >
+        <h1 className="mt-40  text-3xl text-yellow">&#60;Contact Me/&#62;</h1>
+
+        <div className="grid grid-cols-2 gap-96 mt-36 mb-32">
+          <ContactCard
+            link="https://api.whatsapp.com/send?phone=5551995611721"
+            image={whatsappImage}
+            title="Whatsapp"
+            info="+55 51 9 9561-1721"
+          />
+
+          <ContactCard
+            link="https://www.linkedin.com/in/luisfgd/"
+            image={linkedinImage}
+            title="LinkedIn"
+            info="Luís Felipe Ávila"
+          />
+        </div>
+
+        <ContactCard
+          link="mailto:luisf.avila97@gmail.com"
+          image={emailImage}
+          title="E-mail"
+          info="luisf.avila97@gmail.com"
+        />
+      </section>
     </main>
   );
 }
